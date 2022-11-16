@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutterapp/constants/app_constants.dart';
 import '../extensions/extensions.dart';
 import 'dating_user.dart';
 
@@ -54,19 +55,19 @@ class _DatingScreenState extends State<DatingScreen> {
   Widget datingType(DatingType type, bool isSelected, String image) {
     if (isSelected) {
       return Padding(
-        padding: const EdgeInsets.only(right: 8, left: 8),
+        padding: const EdgeInsets.only(right: 8),
         child: GestureDetector(
           onTap: () {
             _onDatingTypeClick(type);
           },
           child: Container(
             alignment: Alignment.center,
-            width: 60,
-            height: 60,
+            width: AppConstants.iconNormalSize,
+            height: AppConstants.iconNormalSize,
             decoration: BoxDecoration(
                 color: HexColor.fromHex("#7f70f7"),
                 shape: BoxShape.rectangle,
-                borderRadius: const BorderRadius.all(Radius.circular(14))),
+                borderRadius: const BorderRadius.all(Radius.circular(20))),
             child: SvgPicture.asset(
               image,
               width: 28,
@@ -85,12 +86,12 @@ class _DatingScreenState extends State<DatingScreen> {
           padding: const EdgeInsets.only(right: 8),
           child: Container(
             alignment: Alignment.center,
-            width: 60,
-            height: 60,
+            width: AppConstants.iconNormalSize,
+            height: AppConstants.iconNormalSize,
             decoration: BoxDecoration(
                 color: HexColor.fromHex("#cbcbe3"),
                 shape: BoxShape.rectangle,
-                borderRadius: const BorderRadius.all(Radius.circular(14))),
+                borderRadius: const BorderRadius.all(Radius.circular(20))),
             child: SvgPicture.asset(
               image,
               width: 24,
@@ -107,17 +108,20 @@ class _DatingScreenState extends State<DatingScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            datingType(DatingType.dating, isDatingSelected,
-                'assets/images/ic_dating.svg'),
-            datingType(DatingType.location, isLocationSelected,
-                'assets/images/ic_location.svg'),
-            datingType(DatingType.favorites, isFavoritesSelected,
-                'assets/images/ic_favorites.svg'),
-          ],
+        Container(
+          margin: const EdgeInsets.only(left: 24, right: 12),
+          child: Row(
+            children: [
+              datingType(DatingType.dating, isDatingSelected,
+                  'assets/images/ic_dating.svg'),
+              datingType(DatingType.location, isLocationSelected,
+                  'assets/images/ic_location.svg'),
+              datingType(DatingType.favorites, isFavoritesSelected,
+                  'assets/images/ic_favorites.svg'),
+            ],
+          ),
         ),
-        Expanded(
+        const Expanded(
           child: DatingUser(),
         ),
       ],

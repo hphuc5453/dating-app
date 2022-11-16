@@ -64,24 +64,21 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        margin: const EdgeInsets.only(left: 12, right: 12),
-        child: Column(
-          children: [
-            HeaderBar(
-              isDatingSelected: isDatingSelected,
-              isGamesSelected: isGamesSelected,
-              isChatSelected: isChatSelected,
-              listener: this,
+      body: Column(
+        children: [
+          HeaderBar(
+            isDatingSelected: isDatingSelected,
+            isGamesSelected: isGamesSelected,
+            isChatSelected: isChatSelected,
+            listener: this,
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: tabController,
+              children: _initData(),
             ),
-            Expanded(
-              child: TabBarView(
-                controller: tabController,
-                children: _initData(),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -89,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen>
   List<Widget> _initData() {
     listData.add(DatingScreen());
     listData.add(Text('dgdsgsgkdjsg'));
-    listData.add(DatingScreen());
+    listData.add(Text('dgdsgsgkdjsg'));
     return listData;
   }
 

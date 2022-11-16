@@ -56,7 +56,7 @@ class _HeaderBarState extends State<HeaderBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 46),
+      margin: const EdgeInsets.only(top: 46, left: 12, right: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
