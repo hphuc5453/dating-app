@@ -1,6 +1,6 @@
 # flutterapp
 
-A new Flutter project.
+Dating App with Flutter.
 
 ## Getting Started
 
