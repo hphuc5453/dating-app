@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/splash/splash_screen.dart';
 
-import 'home/home_screen.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       home: Scaffold(
         body: Center(
-          child: HomeScreen(),
+          child: SplashScreen(),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import '../constants/app_constants.dart';
 import '../extensions/extensions.dart';
 
@@ -18,7 +18,7 @@ class SplashTabPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 24, right: 24),
+      margin: const EdgeInsets.only(left: 24, right: 24, top: 100),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -26,7 +26,8 @@ class SplashTabPage extends StatelessWidget {
             imageAssets,
             alignment: Alignment.topCenter,
             height: 300,
-            fit: BoxFit.fitWidth,
+            width: 300,
+            fit: BoxFit.cover,
           ),
           Expanded(
             child: Container(
